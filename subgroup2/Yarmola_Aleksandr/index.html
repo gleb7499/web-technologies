@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оценка знаний студента</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <form action="URL_ПРЕПОДАВАТЕЛЯ" method="post" enctype="multipart/form-data">
+        <h2>Форма оценки знаний</h2>
+
+        <label for="name">ФИО студента <span style="color: red;">*</span></label>
+        <input type="text" id="name" name="name" placeholder="Введите ваше ФИО" required>
+
+        <label for="group">Группа <span style="color: red;">*</span></label>
+        <input type="text" id="group" name="group" placeholder="Введите вашу группу" required>
+
+        <label>Ваш любимый цвет <span style="color: red;">*</span></label>
+        <div>
+            <label><input type="radio" name="color" value="Красный" required> Красный</label>
+            <label><input type="radio" name="color" value="Зелёный"> Зелёный</label>
+            <label><input type="radio" name="color" value="Синий"> Синий</label>
+            <label><input type="radio" name="color" value="Другой"> Другой</label>
+        </div>
+
+        <label>Какой год обучения вы считаете наиболее интересным? <span style="color: red;">*</span></label>
+        <div>
+            <label><input type="checkbox" name="year" value="Первый"> Первый</label>
+            <label><input type="checkbox" name="year" value="Второй"> Второй</label>
+            <label><input type="checkbox" name="year" value="Третий"> Третий</label>
+            <label><input type="checkbox" name="year" value="Четвёртый"> Четвёртый</label>
+        </div>
+        
+        <label for="html">Что такое HTML? <span style="color: red;">*</span></label>
+        <textarea id="html" name="html" rows="2" placeholder="Определите HTML" required minlength="30"></textarea>
+
+        <label for="css">Напишите определение термина "CSS": <span style="color: red;">*</span></label>
+        <textarea id="css" name="css" rows="2" placeholder="Определите CSS" required minlength="30"></textarea>
+
+        
+        <label for="headings">Сколько основных заголовков есть в HTML (число)? <span style="color: red;">*</span></label>
+        <input type="number" id="headings" name="headings" min="1" max="10" placeholder="Введите число" required>
+        
+        <label for="file">Загрузите файл с примером вашей работы <span style="color: red;">*</span></label>
+        <input type="file" id="file" name="file" accept="image/*,.pdf" required>
+
+        <label for="date">Выберите дату последнего тестирования <span style="color: red;">*</span></label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="counter">Сколько вопросов в тесте? (от 1 до 100)</label>
+        <input type="number" id="counter" name="counter" min="1" max="100" value="0" required>
+
+        <label>Скрыть часть страницы:</label>
+        <button type="button" onclick="toggleSection()">Скрыть/Показать</button>
+        <div id="hidden-section" class="hidden-section">
+             <label for="favorite">Ваш любимый предмет:</label>
+             <select id="favorite" name="favorite">
+                <option value="Математика">Математика</option>
+                <option value="Физика">Физика</option>
+                <option value="Информатика">Информатика</option>
+                <option value="Литература">Литература</option>
+            </select>
+        </div>
+
+        <button type="submit">Отправить форму</button>
+    </form>
+
+    <script>
+        function toggleSection() {
+            const section = document.getElementById('hidden-section');
+            section.style.display = section.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
