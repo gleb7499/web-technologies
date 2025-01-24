@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Характеристика студента</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+</head>
+
+<body onload="setTodayDate()">
+    <form action="URL_ПРЕПОДАВАТЕЛЯ" method="post">
+        <h1>Форма характеристики студента</h1>
+        <p class="required">Обязательно *</p>
+        <label for="name">Пожалуйста, введите ваше имя <span class="required">*</span></label>
+        <input type="text" id="name" name="name" required pattern="[A-Za-zА-Яа-яЁё\s]+"
+            title="Имя должно содержать только буквы и пробелы">
+
+        <label>Какой цвет вам нравится? <span class="required">*</span></label>
+        <div class="radio-group">
+            <label><input type="radio" name="color" value="Красный" required onclick="toggleOtherColorInput()">
+                Красный</label>
+            <label><input type="radio" name="color" value="Зеленый" onclick="toggleOtherColorInput()"> Зеленый</label>
+            <label><input type="radio" name="color" value="Синий" onclick="toggleOtherColorInput()"> Синий</label>
+            <label><input type="radio" name="color" value="Черный" onclick="toggleOtherColorInput()"> Черный</label>
+            <label><input type="radio" name="color" value="Белый" onclick="toggleOtherColorInput()"> Белый</label>
+            <label><input type="radio" name="color" value="Другой" onclick="toggleOtherColorInput()"> Другой</label>
+            <input type="text" id="otherColorInput" name="otherColor" class="other-color-input" required pattern="[A-Za-zА-Яа-яЁё\s]+" title="Цвет должен содержать только буквы и пробелы">
+        </div>
+
+        <label for="town">Какая страна вам нравится больше? <span class="required">*</span></label>
+        <select id="town" name="town" required>
+            <option value="">Выберите страну</option>
+            <option value="США">США</option>
+            <option value="Канада">Канада</option>
+            <option value="Великобритания">Великобритания</option>
+            <option value="Германия">Германия</option>
+            <option value="Франция">Франция</option>
+            <option value="Италия">Италия</option>
+            <option value="Испания">Испания</option>
+            <option value="Австралия">Австралия</option>
+            <option value="Япония">Япония</option>
+            <option value="Китай">Китай</option>
+        </select>
+
+        <label>Какие годы обучения вам действительно понравились?</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="education" value="Первый"> Первый</label>
+            <label><input type="checkbox" name="education" value="Второй"> Второй</label>
+            <label><input type="checkbox" name="education" value="Третий"> Третий</label>
+            <label><input type="checkbox" name="education" value="Четвертый"> Четвертый</label>
+        </div>
+
+        <label>Вы скромный человек? <span class="required">*</span></label>
+        <div class="radio-group">
+            <label><input type="radio" name="modesty" value="Да" required onclick="togglePhotoInput()"> Да</label>
+            <label><input type="radio" name="modesty" value="Нет" onclick="togglePhotoInput()"> Нет</label>
+        </div>
+
+        <div id="photoInput" class="hidden">
+            <label for="photo">Пожалуйста, добавьте свою фотографию <span class="required">*</span></label>
+            <input type="file" id="photo" name="photo" accept="image/*" required onclick="checkPhotoInput()">
+        </div>
+
+        <label for="language">Пожалуйста, опишите (не менее 15 символов и не более 100 символов) ваш любимый язык
+            программирования <span class="required">*</span></label>
+        <textarea id="language" name="language" rows="4" minlength="15" maxlength="100" required pattern=".{15,100}"
+            title="Описание должно содержать от 15 до 100 символов"></textarea>
+
+        <label for="todayDate">Сегодняшняя дата <span class="required">*</span></label>
+        <input type="date" id="todayDate" name="todayDate" required>
+
+        <button type="submit">Отправить</button>
+    </form>
+</body>
