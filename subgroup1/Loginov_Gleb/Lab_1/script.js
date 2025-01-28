@@ -1,18 +1,18 @@
 function toggleOtherColorInput() {
-    var otherColorInput = document.getElementById('otherColorInput');
-    var otherColorRadio = document.querySelector('input[name="color"][value="Другой"]');
-    if (otherColorRadio.checked) {
-        otherColorInput.style.display = 'block';
-        otherColorInput.setAttribute('required', '');
+    var otherCuisineInput = document.getElementById('otherCuisineInput');
+    var otherCuisineRadio = document.querySelector('input[name="cuisine"][value="Другая"]');
+    if (otherCuisineRadio.checked) {
+        otherCuisineInput.style.display = 'block';
+        otherCuisineInput.setAttribute('required', '');
     } else {
-        otherColorInput.style.display = 'none';
-        otherColorInput.removeAttribute('required');
+        otherCuisineInput.style.display = 'none';
+        otherCuisineInput.removeAttribute('required');
     }
 }
 
 function togglePhotoInput() {
     var photoInput = document.getElementById('photoInput');
-    var modestyRadioNo = document.querySelector('input[name="modesty"][value="Нет"]');
+    var modestyRadioNo = document.querySelector('input[name="modesty"][value="Да"]');
     if (modestyRadioNo.checked) {
         photoInput.classList.remove('hidden');
         photoInput.querySelector('input[type="file"]').setAttribute('required', '');
