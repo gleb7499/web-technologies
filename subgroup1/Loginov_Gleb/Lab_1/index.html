@@ -4,71 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Характеристика студента</title>
+    <title>Заказ столика в ресторане</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
 </head>
 
 <body onload="setTodayDate()">
     <form action="URL_ПРЕПОДАВАТЕЛЯ" method="post">
-        <h1>Форма характеристики студента</h1>
+        <h1>Форма заказа столика в ресторане</h1>
         <p class="required">Обязательно *</p>
-        <label for="name">Пожалуйста, введите ваше имя <span class="required">*</span></label>
+        <label for="name">Пожалуйста, введите ваше имя<span class="required">*</span></label>
         <input type="text" id="name" name="name" required pattern="[A-Za-zА-Яа-яЁё\s]+"
             title="Имя должно содержать только буквы и пробелы">
 
-        <label>Какой цвет вам нравится? <span class="required">*</span></label>
+        <label>Какой тип кухни вам нравится?<span class="required">*</span></label>
         <div class="radio-group">
-            <label><input type="radio" name="color" value="Красный" required onclick="toggleOtherColorInput()">
-                Красный</label>
-            <label><input type="radio" name="color" value="Зеленый" onclick="toggleOtherColorInput()"> Зеленый</label>
-            <label><input type="radio" name="color" value="Синий" onclick="toggleOtherColorInput()"> Синий</label>
-            <label><input type="radio" name="color" value="Черный" onclick="toggleOtherColorInput()"> Черный</label>
-            <label><input type="radio" name="color" value="Белый" onclick="toggleOtherColorInput()"> Белый</label>
-            <label><input type="radio" name="color" value="Другой" onclick="toggleOtherColorInput()"> Другой</label>
-            <input type="text" id="otherColorInput" name="otherColor" class="other-color-input" required pattern="[A-Za-zА-Яа-яЁё\s]+" title="Цвет должен содержать только буквы и пробелы">
+            <label><input type="radio" name="cuisine" value="Красный" required onclick="toggleOtherColorInput()">
+                Итальянская</label>
+            <label><input type="radio" name="cuisine" value="Французская"
+                    onclick="toggleOtherColorInput()">Французская</label>
+            <label><input type="radio" name="cuisine" value="Японская"
+                    onclick="toggleOtherColorInput()">Японская</label>
+            <label><input type="radio" name="cuisine" value="Китайская"
+                    onclick="toggleOtherColorInput()">Китайская</label>
+            <label><input type="radio" name="cuisine" value="Мексиканская"
+                    onclick="toggleOtherColorInput()">Мексиканская</label>
+            <label><input type="radio" name="cuisine" value="Другая" onclick="toggleOtherColorInput()">Другая</label>
+            <input type="text" id="otherCuisineInput" name="otherColor" class="other-cuisine-input" required
+                pattern="[A-Za-zА-Яа-яЁё\s]+" title="Цвет должен содержать только буквы и пробелы">
         </div>
 
-        <label for="town">Какая страна вам нравится больше? <span class="required">*</span></label>
+        <label for="town">Какой стиль интерьеравам нравится больше?<span class="required">*</span></label>
         <select id="town" name="town" required>
-            <option value="">Выберите страну</option>
-            <option value="США">США</option>
-            <option value="Канада">Канада</option>
-            <option value="Великобритания">Великобритания</option>
-            <option value="Германия">Германия</option>
-            <option value="Франция">Франция</option>
-            <option value="Италия">Италия</option>
-            <option value="Испания">Испания</option>
-            <option value="Австралия">Австралия</option>
-            <option value="Япония">Япония</option>
-            <option value="Китай">Китай</option>
+            <option value="">Выберите стиль</option>
+            <option value="Скандинавский стиль">Скандинавский стиль</option>
+            <option value="Лофт">Лофт</option>
+            <option value="Классический стиль">Классический стиль</option>
+            <option value="Модерн">Модерн</option>
+            <option value="Прованс">Прованс</option>
+            <option value="Минимализм">Минимализм</option>
         </select>
 
-        <label>Какие годы обучения вам действительно понравились?</label>
+        <label>Какиую музыку предпочитаете?</label>
         <div class="checkbox-group">
-            <label><input type="checkbox" name="education" value="Первый"> Первый</label>
-            <label><input type="checkbox" name="education" value="Второй"> Второй</label>
-            <label><input type="checkbox" name="education" value="Третий"> Третий</label>
-            <label><input type="checkbox" name="education" value="Четвертый"> Четвертый</label>
+            <label><input type="checkbox" name="music" value="Джаз">Джаз</label>
+            <label><input type="checkbox" name="music" value="Лаунж">Лаунж</label>
+            <label><input type="checkbox" name="music" value="Классическая музыка">Классическая музыка</label>
+            <label><input type="checkbox" name="music" value="Босса-нова">Босса-нова</label>
+            <label><input type="checkbox" name="music" value="Инструментальная музыка">Инструментальная музыка</label>
+            <label><input type="checkbox" name="music" value="Современные хиты в акустической обработке">Современные хиты в акустической обработке</label>
         </div>
 
-        <label>Вы скромный человек? <span class="required">*</span></label>
+        <label>Есть ли карта постоянного клиента?<span class="required">*</span></label>
         <div class="radio-group">
-            <label><input type="radio" name="modesty" value="Да" required onclick="togglePhotoInput()"> Да</label>
-            <label><input type="radio" name="modesty" value="Нет" onclick="togglePhotoInput()"> Нет</label>
+            <label><input type="radio" name="modesty" value="Да" required onclick="togglePhotoInput()">Да</label>
+            <label><input type="radio" name="modesty" value="Нет" onclick="togglePhotoInput()">Нет</label>
         </div>
 
         <div id="photoInput" class="hidden">
-            <label for="photo">Пожалуйста, добавьте свою фотографию <span class="required">*</span></label>
+            <label for="photo">Добавьте фотографию карты<span class="required">*</span></label>
             <input type="file" id="photo" name="photo" accept="image/*" required onclick="checkPhotoInput()">
         </div>
 
-        <label for="language">Пожалуйста, опишите (не менее 15 символов и не более 100 символов) ваш любимый язык
-            программирования <span class="required">*</span></label>
+        <label for="language">Есть ли у вас особые пожелания? (не менее 15 и не более 100 символов)<span class="required">*</span></label>
         <textarea id="language" name="language" rows="4" minlength="15" maxlength="100" required pattern=".{15,100}"
-            title="Описание должно содержать от 15 до 100 символов"></textarea>
+            title="Описание должно содержать от 15 до 100 символов" style="max-width: 95%;"></textarea>
 
-        <label for="todayDate">Сегодняшняя дата <span class="required">*</span></label>
+        <label for="todayDate">Дата бронирования<span class="required">*</span></label>
         <input type="date" id="todayDate" name="todayDate" required>
 
         <button type="submit">Отправить</button>
