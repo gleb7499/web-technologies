@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="css/style.css">
+   <title>Google Form</title>
+</head>
+
+<body>
+   <div class="head">
+
+   </div>
+   <div class="body">
+      <div class="form-cover">
+         <div style="background-color: #B485FB; height: 5px;"></div>
+         <form action="">
+            <h1>Password request form</h1>
+            <p class="describtion">The name and photo associated with your Google account will be recorded when you upload files and submit
+               this form. Not <b>spas.work@gmail.com</b>? <a href="">Switch account</a></p>
+            <fieldset>
+               <label for="name">
+                  <h2>Please fill your name</h2>
+               </label>
+               <input class="input" placeholder="Your answer" type="text" name="" id="name" required>
+            </fieldset>
+
+            <fieldset>
+               <label for="city"><h2>What is your city?</h2></label>
+               <select required name="" id="city">
+                  <option value="none" selected disabled>Choose</option>
+                  <option value="brest">Brest</option>
+                  <option value="vitebsk">Vitebsk</option>
+                  <option value="gomel">Gomel</option>
+                  <option value="grodno">Grodno</option>
+                  <option value="mogilev">Mogilev</option>
+                  <option value="minsk">Minsk</option>
+               </select>
+            </fieldset>
+
+            <fieldset>
+               <label for="animal-selection">
+                  <h2>What are your animals?</h2>
+                  <div class="animal-selection-cover" id="animal-selection">
+                     <div class="animal-selection-item">
+                        <input id="cat" type="checkbox"  value="Cat" />
+                        <label for="cat">Cat</label>
+                     </div>
+                     <div class="animal-selection-item">
+                        <input id="dog" type="checkbox"  value="Dog" />
+                        <label for="dog">Dog</label>
+
+                     </div>
+                     <div class="animal-selection-item">
+                        <input id="parrot" type="checkbox"  value="Parrot" />
+                        <label for="parrot">Parrot</label>
+
+                     </div>
+                     <div class="animal-selection-item">
+                        <input id="hamster" type="checkbox"  value="Hamster" />
+                        <label for="hamster">Hamster</label>
+
+                     </div>
+                     <div class="animal-selection-item">
+                        <input id="guinea-pig" type="checkbox"  value="Guinea pig" />
+                        <label for="guinea-pig">Guinea pig</label>
+
+                     </div>
+                     <div class="animal-selection-item">
+                        <input id="horse" type="checkbox" value="Horse" />
+                        <label for="horse">Horse</label>
+
+                     </div>
+                     <div class="animal-selection-item">
+                        <input id="other" required type="checkbox" value="Other" />
+                        <label for="other">Other <input class="input" type="text"></label>
+
+                        
+                     </div>
+                  </div>
+               </label>
+            </fieldset>
+
+            <fieldset>
+               <label for="photo"><h2>Please send photo of your animals</h2></label>
+               <input required type="file"" name="" id=" photo">
+            </fieldset>
+
+            <fieldset>
+               <label for="describtion">
+                  <h2>Please describe (at least 20 symbols) about our animals</h2>
+               </label>
+               <textarea placeholder="Your answer..." class="input" required name="" id="describtion" minlength="20"></textarea>
+            </fieldset>
+
+            <button class="submit" type="submit">Submit</button>
+            <p style="color: lightgray;">Never submit passwords throwgh Google Forms</p>
+         </form>
+      </div>
+   </div>
+</body>
+
+</html>
