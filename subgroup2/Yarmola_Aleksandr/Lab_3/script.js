@@ -97,24 +97,11 @@ function processNumbersUI() {
 }
 
 // Задача 5
-function sum(a) {
-     return function(b) {
-         return function(c) {
-             return a + b + c;
-         }
-     }
-}
-
 function sumUI() {
-     let a = Number(document.getElementById('sum1').value);
-     let b = Number(document.getElementById('sum2').value);
-     let c = Number(document.getElementById('sum3').value);
+     let a = document.getElementById('sum1').value.split(',').map(Number);
+     
      let result = document.getElementById('result5');
-     if (isNaN(a) || isNaN(b) || isNaN(c)) {
-         result.innerHTML = "Введите корректные числа";
-         return;
-     }
-     result.innerHTML = `Результат: ${sum(a)(b)(c)}`;
+     result.innerHTML = `Результат: ${a.reduce((acc, num) => acc + num, 0)}`; 
 }
 
 // Задача 6
@@ -239,12 +226,14 @@ function flattenUI() {
 // Задача 10
 function MyFunctionUnique(input, count) {
      let arr = Array.isArray(input) ? input : input.split('');
+     
      let counts = {};
      arr.forEach(item => {
          counts[item] = (counts[item] || 0) + 1;
      });
+     
      return Object.entries(counts)
-         .filter(([_, freq]) => freq <= count)
+         .filter(([_, freq]) => freq < count)
          .map(([item]) => isNaN(item) ? item : Number(item));
 }
 
